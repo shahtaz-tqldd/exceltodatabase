@@ -1,0 +1,40 @@
+<style type="text/css">
+	h1{
+		color: #73e0a7;
+		margin-top: 100px;
+		margin-left: 100px;
+		font-size: 90px;
+		font-family: sans-serif;
+	}
+
+	.med_sec{
+		margin-top: 100px;
+		margin-left: 300px;
+		font-size: 20px;
+		font-family: sans-serif;
+		color: #f65360;
+	}
+	.col{
+		font-size: 23px;
+		font-family: sans-serif;
+		color: #222222;
+	}
+</style>
+<a href="{% url 'homepage' %}">Home</a>
+<h1>All Persons</h1>
+
+	
+	<table class="med_sec">
+		<tr>
+			<th class="col">Name</th>
+			<th class="col">Email</th>
+			<th class="col">Phone</th>
+		</tr>
+	{% for pers in person %}
+		<tr>
+			<td>{{pers.name}}</td>
+			<td>{{pers.email}}</td>
+			<td>{{pers.phone}}</td>
+		</tr>
+	{% endfor %}
+	</table>
